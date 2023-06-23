@@ -5,16 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.converterjpg.MainPresenter
 import com.example.converterjpg.MainView
 import com.example.fileconvertor.databinding.ActivityMainBinding
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : MvpAppCompatActivity(), MainView {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var presenter: MainPresenter
+    private val presenter by moxyPresenter { MainPresenter(MainModel()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        initPresenter()
 
         with(binding) {
             loadPictureBtn.setOnClickListener {
@@ -23,9 +24,7 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    private fun initPresenter() {
-        presenter = MainPresenter(this)
-    }
+
 
     override fun setText() {
 
