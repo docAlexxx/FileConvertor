@@ -18,5 +18,11 @@
         android:layout_width="match_parent"
         android:background="@color/purple_200"
         android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/path_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="file uri" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

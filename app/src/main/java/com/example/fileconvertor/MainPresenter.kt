@@ -4,11 +4,8 @@ import com.example.fileconvertor.MainModel
 import moxy.MvpPresenter
 
 
-class MainPresenter(private val model : MainModel): MvpPresenter<MainView>() {
+class MainPresenter(): MvpPresenter<MainView>() {
 
-    fun onButtonClick() {
-
-    }
 
 
 }
